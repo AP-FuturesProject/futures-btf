@@ -1475,7 +1475,7 @@ function NewCampuses() {
         </p>
         <p>
           By the end of 2027, we believe God is calling us to plant at least
-          seven new campuses across the globe. New cities. New communities.
+          six new campuses across the globe. New cities. New communities.
           New families finding a home.
         </p>
       </div>

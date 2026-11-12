@@ -1336,8 +1336,8 @@ function WhatGodsBeenDoing() {
             title="USA — what God has been doing through Futures Church"
             posterTitle="USA"
             poster={{
-              src: '/media/portraits/australia-poster.jpg',
-              alt: 'Futures Church Australia team on stage celebrating together.',
+              src: '/media/portraits/usa-poster.jpg',
+              alt: 'Futures Church USA team seated on stage, smiling and applauding.',
             }}
           />
           <p className="mt-3 font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-cream-50)]/55">

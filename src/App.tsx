@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
  * Page order:
  *   1.  Hero
  *   2.  Building the Future 2026  (intro copy)
- *   3.  What God's Been Doing  (Australia + Global videos)
+ *   3.  What God's Been Doing  (USA + Global videos)
  *   4.  15 Years of Multiplication  (real growth infographic)
  *   5.  Church Health  (placeholder copy + infographic placeholder)
  *   6.  Futures Wellness Centre  (real impact infographic)
@@ -1328,20 +1328,20 @@ function WhatGodsBeenDoing() {
       <YellowStrip className="mt-6 md:mt-8 w-full max-w-[520px]" />
 
       <div className="mt-12 md:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10">
-        {/* Local — staff video, what God has been doing locally */}
+        {/* USA — staff video, what God has been doing */}
         <div>
           <VimeoEmbed
-            id="1183634809"
-            hash="9f487d7782"
-            title="Australia — what God has been doing through Futures Church"
-            posterTitle="Australia"
+            id="1245129891"
+            hash="406152c722"
+            title="USA — what God has been doing through Futures Church"
+            posterTitle="USA"
             poster={{
               src: '/media/portraits/australia-poster.jpg',
               alt: 'Futures Church Australia team on stage celebrating together.',
             }}
           />
           <p className="mt-3 font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-cream-50)]/55">
-            Australia · Futures Church
+            USA - FUTURES CHURCH
           </p>
         </div>
 

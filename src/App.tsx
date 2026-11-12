@@ -1639,7 +1639,7 @@ function ChurchHealth() {
       <figure className="mt-12 md:mt-16 m-0">
         <img
           src="/media/infographics/snapshot.jpg"
-          alt="Futures Church snapshot: approx. 10,000+ weekly attendance · 594 baptisms in 2025 · 4,043 salvations in 2025 · approx. 20,000+ people call Futures home · 1,713 serving in Dream Team · 854 YTH weekly attendance · 305 Connect Groups · 1,494 kids weekly attendance."
+          alt="Futures Church snapshot: 9,000 average weekly attendance · 19,000+ people call Futures home · 594 baptisms in 2025 · 3,773 salvations in 2025 · 1,713 serving in Dream Team · 777 youth weekly attendance · 305 connect groups · 1,494 kids weekly attendance."
           loading="lazy"
           decoding="async"
           className="w-full h-auto block"

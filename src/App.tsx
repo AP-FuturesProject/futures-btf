@@ -1590,7 +1590,7 @@ function FifteenYears() {
       <figure className="mt-12 md:mt-16 m-0">
         <img
           src="/media/infographics/15-years.jpg"
-          alt="15 years of growth: 3 → 21 campuses, 1 → 4 nations, 1 → 8 cities, 7,000 → 19,000 congregation."
+          alt="15 years of growth: 3 → 26 campuses, 1 → 5 nations, 1 → 13 cities, 7,000 → 19,488 congregation, 2 → 10 buildings."
           loading="lazy"
           decoding="async"
           className="block w-full h-auto"

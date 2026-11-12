@@ -1396,14 +1396,6 @@ const CAMPUSES: Campus[] = [
     },
   },
   {
-    slug: 'chattanooga',
-    name: 'Futures Chattanooga · Tennessee, USA',
-    image: {
-      src: '/media/campuses/chattanooga.jpg',
-      alt: 'Futures Chattanooga — Tennessee, USA.',
-    },
-  },
-  {
     slug: 'concepcion',
     name: 'Futuros Concepción · Chile',
     image: {

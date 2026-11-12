@@ -1470,7 +1470,7 @@ function NewCampuses() {
           and people&rsquo;s eternities depend on it.
         </p>
         <p>
-          From Adelaide to Atlanta, Bali to Brazil, Futures Church has always
+          From Adelaide to Atlanta, Bali to Venezuela, Futures Church has always
           been a church on the move. And we&rsquo;re not slowing down.
         </p>
         <p>

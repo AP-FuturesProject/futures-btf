@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 
 /**
  * Building The Future — homepage
@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
  * Page order:
  *   1.  Hero
  *   2.  Building the Future 2026  (intro copy)
- *   3.  What God's Been Doing  (Australia + Global videos)
+ *   3.  What God's Been Doing  (USA + Global videos)
  *   4.  15 Years of Multiplication  (real growth infographic)
  *   5.  Church Health  (placeholder copy + infographic placeholder)
  *   6.  Futures Wellness Centre  (real impact infographic)
@@ -21,9 +21,8 @@ import { useEffect, useState } from 'react';
  *                      Concepción, Mérida, Sur Del Lago, Valles Del Tuy)
  *   8.  Action Ladder  (Pray · Prepare · Give/Pledge · Commit)
  *   9.  Ways to Give  (slide-aligned: Choose Either / Ways / Bank / Questions)
- *   10. Stories of Faith  (video placeholder)
- *   11. FAQs
- *   12. Footer
+ *   10. FAQs
+ *   11. Footer
  *
  * Components retained from the previous structure but no longer rendered
  * (kept for easy revival, prefixed `export` to satisfy noUnusedLocals):
@@ -44,12 +43,11 @@ function App() {
         <WhatGodsBeenDoing />
         <FifteenYears />
         <ChurchHealth />
-        <WellnessClinic />
         <NewCampuses />
         <MountBarker />
+        <WellnessClinic />
         <ActionLadder />
         <WaysToGive />
-        <StoriesOfFaith />
         <FAQs />
       </main>
       <Footer />
@@ -669,88 +667,62 @@ function WaysToGive() {
       <figure className="mt-12 md:mt-16 m-0">
         <img
           src="/media/posters/how-to-give.jpg"
-          alt="How to give — choose either a one-off offering on Sunday June 21 or 28, a 3-month pledge finishing Monday September 28, or a combination. Ways to give: cash, cheque, credit card, online deposit. Tax deductibility is available for donation amounts of $5,000 and above. For any questions call our finance team on 08 8336 0000."
+          alt="How to give. Choose either: 1, one-off offering on Sunday, December 6 or 13; 2, 3 month pledge finishing on Monday, March 8; 3, a combination of an offering plus pledge. Ways to give: Church Center App, cash, check, credit card, crypto or stock. For any questions, email our finance team at atlanta.finance@futures.church."
           loading="lazy"
           decoding="async"
           className="w-full h-auto block"
         />
       </figure>
 
-      {/* Bank account details — stacked single-column so each piece of info
-          gets its own poster moment. Huge numbers in gold; account number is
-          the largest because it's the most critical to copy correctly. */}
-      <div className="mt-14 md:mt-20 bg-[var(--color-cream-100)] border-t-[6px] border-[var(--color-gold-500)] p-8 md:p-12 lg:p-16">
-        <p className="font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-ink-900)]/55">
-          For Direct Deposit
+      {/* Campus Church Center giving links */}
+      <div className="mt-12 md:mt-16">
+        <p className="font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-ink-900)]/65 mb-6 md:mb-8">
+          Give Online Via Church Center
         </p>
-        <p
-          className="mt-3 font-[family-name:var(--font-display)] uppercase tracking-[0.06em] text-[var(--color-ink-900)] leading-[1]"
-          style={{ fontSize: 'clamp(1.75rem, 4vw, 3.25rem)' }}
-        >
-          FCSA BTF Project
-        </p>
-
-        <div className="mt-10 md:mt-14 space-y-9 md:space-y-12">
-          <div>
-            <p className="font-[family-name:var(--font-display)] uppercase tracking-[0.32em] text-xs md:text-sm text-[var(--color-ink-900)]/55 mb-3">
-              BSB
-            </p>
-            <p
-              className="font-[family-name:var(--font-display)] uppercase leading-[0.95] tracking-[-0.012em] text-[var(--color-gold-800)] m-0"
-              style={{ fontSize: 'clamp(2.5rem, 9vw, 7rem)' }}
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 md:gap-4">
+          {[
+            {
+              label: 'ALPHARETTA',
+              ariaLabel: 'Give to Building the Future at Futures Alpharetta',
+              href: 'https://futuresalpharetta.churchcenter.com/giving/to/building-the-future-2026-27',
+            },
+            {
+              label: 'GWINNETT',
+              ariaLabel: 'Give to Building the Future at Futures Gwinnett',
+              href: 'https://futuresgwinnett.churchcenter.com/giving/to/building-the-future-2026-27',
+            },
+            {
+              label: 'KENNESAW',
+              ariaLabel: 'Give to Building the Future at Futures Kennesaw',
+              href: 'https://futureskennesaw.churchcenter.com/giving/to/building-the-future-2026-27',
+            },
+          ].map((campus) => (
+            <a
+              key={campus.href}
+              href={campus.href}
+              target="_blank"
+              rel="noopener"
+              aria-label={campus.ariaLabel}
+              className="inline-flex items-center justify-center w-full sm:w-auto bg-[var(--color-gold-500)] text-[var(--color-ink-900)] font-[family-name:var(--font-display)] uppercase tracking-[0.1em] text-lg md:text-2xl px-5 py-3 leading-none hover:bg-[var(--color-ink-900)] hover:text-[var(--color-cream-50)] transition-colors"
             >
-              085-005
-            </p>
-          </div>
-          <div>
-            <p className="font-[family-name:var(--font-display)] uppercase tracking-[0.32em] text-xs md:text-sm text-[var(--color-ink-900)]/55 mb-3">
-              Account Number
-            </p>
-            <p
-              className="font-[family-name:var(--font-display)] uppercase leading-[0.95] tracking-[-0.012em] text-[var(--color-gold-800)] m-0"
-              style={{ fontSize: 'clamp(2.25rem, 8vw, 6.5rem)' }}
-            >
-              31-405-9072
-            </p>
-          </div>
-          <div>
-            <p className="font-[family-name:var(--font-display)] uppercase tracking-[0.32em] text-xs md:text-sm text-[var(--color-ink-900)]/55 mb-3">
-              Reference
-            </p>
-            <p
-              className="font-[family-name:var(--font-display)] uppercase leading-[1.05] tracking-[0.02em] text-[var(--color-ink-900)] m-0"
-              style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}
-            >
-              Your Pledge Number
-            </p>
-          </div>
+              {campus.label}
+            </a>
+          ))}
         </div>
       </div>
 
-      {/* QUESTIONS — huge phone number as the closing CTA */}
+      {/* QUESTIONS */}
       <div className="mt-16 md:mt-24">
         <YellowTag>Questions?</YellowTag>
         <p className="mt-6 md:mt-8 text-lg md:text-xl text-[var(--color-ink-900)]/80">
-          Call our finance team at
+          Email our finance team at
         </p>
-        <p
-          className="mt-3 md:mt-4 font-[family-name:var(--font-display)] uppercase tracking-[-0.01em] leading-[1]"
-          style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)' }}
-        >
+        <p className="mt-3 md:mt-4 text-lg md:text-xl text-[var(--color-ink-900)]/80">
           <a
-            href="tel:+61883600000"
-            className="text-[var(--color-ink-900)] hover:text-[var(--color-gold-800)] transition-colors"
+            href="mailto:atlanta.finance@futures.church"
+            className="border-b-2 border-[var(--color-gold-500)] pb-0.5 hover:border-[var(--color-ink-900)] transition-colors"
           >
-            (08) 8336 0000
-          </a>
-        </p>
-        <p className="mt-5 md:mt-6 text-base md:text-lg text-[var(--color-ink-900)]/75">
-          Or email{' '}
-          <a
-            href="mailto:finance@futures.church"
-            className="font-[family-name:var(--font-display)] uppercase tracking-[0.1em] border-b-2 border-[var(--color-gold-500)] pb-0.5 hover:border-[var(--color-ink-900)] transition-colors"
-          >
-            finance@futures.church
+            atlanta.finance@futures.church
           </a>
         </p>
       </div>
@@ -1078,33 +1050,44 @@ function Quote({ voice }: { voice: Voice }) {
    PLACEHOLDERS — replace each entry's `a` with the real answer when the team
    has firmed it up.
 ---------------------------------------------------------------------------- */
-type FAQ = { q: string; a: string };
+type FAQ = { q: string; a: ReactNode };
+
+const linkClass =
+  'border-b-2 border-[var(--color-gold-500)] pb-0.5 hover:border-[var(--color-ink-900)] transition-colors';
 
 const FAQS: FAQ[] = [
   {
     q: 'When does the giving start?',
     a:
-      'The Building the Future offering will take place on Sunday, June 21 and Sunday, June 28. That’s when you can bring a one-off offering, begin a 3-month pledge, or do a combination of both. Pledges finish on Monday, September 28.',
+      'The Building the Future offering will take place on Sunday, December 6 and Sunday, December 13. That’s when you can bring a one-off offering, begin a 3-month pledge, or do a combination of both. Pledges finish on Monday, March 8 2027.',
   },
   {
     q: 'Is my pledge tax-deductible?',
     a:
-      'Tax deductibility is available for donation amounts of $5,000 and above. If you would like a tax deduction, please contact our finance team for account details. Call (08) 8336 0000 or email finance@futures.church.',
-  },
-  {
-    q: 'Can I give from outside Australia?',
-    a:
-      'We welcome international partners who would like to support our vision. You can give securely or via international bank transfer. For overseas transfers, please contact our finance team at finance@futures.church for banking details.',
+      'Yes it is. Futures Church is a qualified section 501(c) (3) organization. All tithes, offerings, or donations of any kind are tax deductible under section 170(c)(2). You agree to relinquish control in accordance with IRS regulations.',
   },
   {
     q: 'What if my circumstances change?',
     a:
-      'A pledge is an act of faith, not a contract. If anything shifts between now and the end of September, have a conversation with our finance team. They’ll walk through your options with you.',
+      'A pledge is an act of faith, not a contract. If anything shifts between now and the beginning of March, have a conversation with our finance team. They’ll walk through your options with you.',
   },
   {
     q: 'Who can I talk to?',
-    a:
-      'For anything about banking, pledges or tax, our finance team is the right call. Phone (08) 8336 0000 or email finance@futures.church. For questions about the vision itself (what we’re giving to, why now, what it means for your campus) have a chat with your Campus Pastor.',
+    a: (
+      <>
+        For anything about banking, pledges or tax, our finance team is the
+        right call. They can be reached by calling{' '}
+        <a href="tel:+14044902032" className={linkClass}>
+          404-490-2032
+        </a>{' '}
+        or by emailing{' '}
+        <a href="mailto:Atlanta.Finance@futures.church" className={linkClass}>
+          Atlanta.Finance@futures.church
+        </a>
+        . For questions about the vision itself (what we’re giving to, why now,
+        what it means for your campus) have a chat with your Campus Pastor.
+      </>
+    ),
   },
 ];
 
@@ -1184,11 +1167,10 @@ function Footer() {
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#updates">What God&rsquo;s Doing</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#multiplication">15 Years</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#church-health">Church Health</a></li>
-              <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#wellness">Wellness Clinic</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#campuses">New Campuses</a></li>
-              <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#mount-barker">Mount Barker</a></li>
+              <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#mount-barker">Sugarloaf Building</a></li>
+              <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#wellness">Sentul City</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#ways-to-give">Ways to Give</a></li>
-              <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#stories">Stories of Faith</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#faqs">FAQs</a></li>
             </ul>
           </div>
@@ -1200,22 +1182,19 @@ function Footer() {
             </p>
             <p className="leading-[1.55]">
               <a
-                href="mailto:finance@futures.church"
+                href="mailto:atlanta.finance@futures.church"
                 className="hover:text-[var(--color-gold-500)] transition-colors"
               >
-                finance@futures.church
+                atlanta.finance@futures.church
               </a>
             </p>
             <p className="mt-2 leading-[1.55] text-[var(--color-cream-50)]/75">
               <a
-                href="tel:+61883600000"
+                href="tel:+14044902032"
                 className="hover:text-[var(--color-gold-500)] transition-colors"
               >
-                8336 0000
+                404-490-2032
               </a>
-            </p>
-            <p className="mt-2 leading-[1.55] text-[var(--color-cream-50)]/55">
-              57 Darley Road, Paradise SA 5075
             </p>
           </div>
         </div>
@@ -1310,6 +1289,9 @@ function BuildingTheFuture2026() {
    video. Dark moment to break the cream rhythm + put the videos in their best
    visual environment.
 ---------------------------------------------------------------------------- */
+/** Drop a Vimeo id (and unlisted hash, if the video needs one) here to embed it. */
+const GLOBAL_VIMEO = { id: '', hash: '' };
+
 function WhatGodsBeenDoing() {
   return (
     <Section id="updates" tone="ink">
@@ -1328,35 +1310,71 @@ function WhatGodsBeenDoing() {
       <YellowStrip className="mt-6 md:mt-8 w-full max-w-[520px]" />
 
       <div className="mt-12 md:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10">
-        {/* Local — staff video, what God has been doing locally */}
+        {/* USA — staff video, what God has been doing */}
         <div>
           <VimeoEmbed
-            id="1183634809"
-            hash="9f487d7782"
-            title="Australia — what God has been doing through Futures Church"
-            posterTitle="Australia"
+            id="1245129891"
+            hash="406152c722"
+            title="USA — what God has been doing through Futures Church"
+            posterTitle="USA"
             poster={{
-              src: '/media/portraits/australia-poster.jpg',
-              alt: 'Futures Church Australia team on stage celebrating together.',
+              src: '/media/portraits/usa-poster.jpg',
+              alt: 'Futures Church USA team seated on stage, smiling and applauding.',
             }}
           />
           <p className="mt-3 font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-cream-50)]/55">
-            Australia · Futures Church
+            USA - FUTURES CHURCH
           </p>
         </div>
 
-        {/* Global — Ps Ashley & Jane Evans vision */}
+        {/* Global — Ps Ashley & Jane Evans vision. Empty id keeps the placeholder. */}
         <div>
-          <VimeoEmbed
-            id="1188946482"
-            hash="076da569fd"
-            title="Global — Ps Ashley & Jane Evans"
-            posterTitle="Global"
-            poster={{
-              src: '/media/portraits/ashley-jane-poster.jpg',
-              alt: 'Pastors Ashley and Jane Evans — Global vision.',
-            }}
-          />
+          {GLOBAL_VIMEO.id ? (
+            <VimeoEmbed
+              id={GLOBAL_VIMEO.id}
+              hash={GLOBAL_VIMEO.hash || undefined}
+              title="Global — Ps Ashley & Jane Evans"
+              posterTitle="Global"
+              poster={{
+                src: '/media/portraits/ashley-jane-poster.jpg',
+                alt: 'Pastors Ashley and Jane Evans — Global vision.',
+              }}
+            />
+          ) : (
+            <div
+              className="relative w-full aspect-video bg-[var(--color-ink-900)] overflow-hidden"
+              role="img"
+              aria-label="Global video coming soon"
+            >
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    'linear-gradient(135deg, var(--color-rust-900) 0%, var(--color-ink-900) 60%, var(--color-ink-900) 100%)',
+                }}
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 opacity-50 mix-blend-soft-light"
+                style={{
+                  backgroundImage:
+                    'repeating-linear-gradient(108deg, transparent 0 90px, rgba(250,246,239,0.05) 90px 92px)',
+                }}
+              />
+              <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
+                <p
+                  className="font-[family-name:var(--font-display)] uppercase text-white m-0"
+                  style={{
+                    fontSize: 'clamp(1.25rem, 3.2vw, 2.5rem)',
+                    letterSpacing: '0.12em',
+                    lineHeight: 1.05,
+                  }}
+                >
+                  Global video coming soon
+                </p>
+              </div>
+            </div>
+          )}
           <p className="mt-3 font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-cream-50)]/55">
             Global · Ps Ashley &amp; Jane Evans
           </p>
@@ -1380,27 +1398,19 @@ type Campus = {
 
 const CAMPUSES: Campus[] = [
   {
-    slug: 'kilburn',
-    name: 'Futures Kilburn · Melbourne, Australia',
+    slug: 'sentul-city',
+    name: 'Futures Sentul City · Indonesia',
     image: {
-      src: '/media/campuses/kilburn.jpg',
-      alt: 'Futures Kilburn — Melbourne, Australia.',
+      src: '/media/campuses/sentul-city.jpg',
+      alt: 'Futures Sentul City — Indonesia.',
     },
   },
   {
-    slug: 'new-indonesia',
-    name: 'Futures New Indonesia',
+    slug: 'geelong',
+    name: 'Futures Geelong · Victoria, Australia',
     image: {
-      src: '/media/campuses/new-indonesia.jpg',
-      alt: 'Futures New Indonesia.',
-    },
-  },
-  {
-    slug: 'chattanooga',
-    name: 'Futures Chattanooga · Tennessee, USA',
-    image: {
-      src: '/media/campuses/chattanooga.jpg',
-      alt: 'Futures Chattanooga — Tennessee, USA.',
+      src: '/media/campuses/geelong.jpg',
+      alt: 'Futures Geelong — Victoria, Australia.',
     },
   },
   {
@@ -1470,12 +1480,12 @@ function NewCampuses() {
           and people&rsquo;s eternities depend on it.
         </p>
         <p>
-          From Adelaide to Atlanta, Bali to Brazil, Futures Church has always
+          From Adelaide to Atlanta, Bali to Venezuela, Futures Church has always
           been a church on the move. And we&rsquo;re not slowing down.
         </p>
         <p>
           By the end of 2027, we believe God is calling us to plant at least
-          seven new campuses across the globe. New cities. New communities.
+          six new campuses across the globe. New cities. New communities.
           New families finding a home.
         </p>
       </div>
@@ -1590,7 +1600,7 @@ function FifteenYears() {
       <figure className="mt-12 md:mt-16 m-0">
         <img
           src="/media/infographics/15-years.jpg"
-          alt="15 years of growth: 3 → 21 campuses, 1 → 4 nations, 1 → 8 cities, 7,000 → 19,000 congregation."
+          alt="15 years of growth: 3 → 25 campuses, 1 → 4 nations, 1 → 13 cities, 7,000 → 20,000+ approx. congregation, 2 → 10 buildings."
           loading="lazy"
           decoding="async"
           className="block w-full h-auto"
@@ -1638,7 +1648,7 @@ function ChurchHealth() {
           groups. Replaces the previous placeholder copy + infographic tile. */}
       <figure className="mt-12 md:mt-16 m-0">
         <img
-          src="/media/infographics/church-health.jpg"
+          src="/media/infographics/snapshot.jpg"
           alt="Futures Church snapshot: 9,000 average weekly attendance · 19,000+ people call Futures home · 594 baptisms in 2025 · 3,773 salvations in 2025 · 1,713 serving in Dream Team · 777 youth weekly attendance · 305 connect groups · 1,494 kids weekly attendance."
           loading="lazy"
           decoding="async"
@@ -1654,18 +1664,21 @@ function ChurchHealth() {
    Standalone announcement section sitting under New Campuses. Calls out the
    new Mount Barker building with the campaign screen graphic.
 ---------------------------------------------------------------------------- */
+/** Drop a Vimeo id (and unlisted hash, if the video needs one) here to embed it. */
+const SUGARLOAF_VIMEO = { id: '', hash: '' };
+
 export function MountBarker() {
   return (
     <Section id="mount-barker" tone="cream-100">
       <p className="font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-ink-900)]/65 mb-6 md:mb-8">
-        Built In Faith · Mount Barker
+        Built In Faith · Sugarloaf Building
       </p>
 
       <h2
         className="font-[family-name:var(--font-display)] uppercase leading-[0.88] tracking-[-0.01em]"
         style={{ fontSize: 'clamp(2.75rem, 9vw, 9rem)' }}
       >
-        Mount <span className="text-[var(--color-gold-800)]">Barker</span>.
+        Sugarloaf <span className="text-[var(--color-gold-800)]">Building</span>.
       </h2>
 
       <YellowStrip className="mt-8 md:mt-10 w-full max-w-[760px]" />
@@ -1675,26 +1688,61 @@ export function MountBarker() {
           faith-led, no em-dashes). */}
       <div className="mt-10 md:mt-14 max-w-[58ch] text-base md:text-lg lg:text-xl leading-[1.7] text-[var(--color-ink-900)]/85 space-y-5">
         <p>
-          For years we&rsquo;ve been praying for a building for Mount Barker. A
-          home where the church family can gather, grow and send from.
+          For years we&rsquo;ve prayed for a new home for Gwinnett. A
+          place where our church family can gather, grow, and be sent out
+          to reach our city.
         </p>
         <p>
-          We&rsquo;re so excited to announce that God has answered. Another
-          yes to His vision. Another seed in the ground for the next chapter
-          of Futures Church.
+          Today, the land is cleared and ready to build. This is another
+          seed in the ground for the next chapter of Futures Church.
         </p>
       </div>
 
-      {/* Mount Barker announcement screen. */}
-      <figure className="mt-10 md:mt-14 m-0">
-        <img
-          src="/media/campuses/mount-barker.jpg"
-          alt="Futures Mount Barker — South Australia. A new home for the church family."
-          loading="lazy"
-          decoding="async"
-          className="block w-full h-auto"
-        />
-      </figure>
+      {/* Sugarloaf video. Empty id keeps the poster; a real id uses VimeoEmbed. */}
+      <div className="mt-10 md:mt-14">
+        {SUGARLOAF_VIMEO.id ? (
+          <VimeoEmbed
+            id={SUGARLOAF_VIMEO.id}
+            hash={SUGARLOAF_VIMEO.hash || undefined}
+            title="Sugarloaf Building"
+            posterTitle="Sugarloaf"
+          />
+        ) : (
+          <div
+            className="relative w-full aspect-video bg-[var(--color-ink-900)] overflow-hidden"
+            role="img"
+            aria-label="Sugarloaf video coming soon"
+          >
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'linear-gradient(135deg, var(--color-rust-900) 0%, var(--color-ink-900) 60%, var(--color-ink-900) 100%)',
+              }}
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-50 mix-blend-soft-light"
+              style={{
+                backgroundImage:
+                  'repeating-linear-gradient(108deg, transparent 0 90px, rgba(250,246,239,0.05) 90px 92px)',
+              }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
+              <p
+                className="font-[family-name:var(--font-display)] uppercase text-white m-0"
+                style={{
+                  fontSize: 'clamp(1.25rem, 3.2vw, 2.5rem)',
+                  letterSpacing: '0.12em',
+                  lineHeight: 1.05,
+                }}
+              >
+                Sugarloaf video coming soon
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
     </Section>
   );
 }
@@ -1709,15 +1757,14 @@ function WellnessClinic() {
   return (
     <Section id="wellness" tone="cream">
       <p className="font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-ink-900)]/65 mb-6 md:mb-8">
-        Built In Faith · Four Years On
+        Built In Faith · Sentul City, Indonesia
       </p>
 
       <h2
         className="font-[family-name:var(--font-display)] uppercase leading-[0.88] tracking-[-0.01em]"
         style={{ fontSize: 'clamp(2.75rem, 9vw, 9rem)' }}
       >
-        Futures{' '}
-        <span className="text-[var(--color-gold-800)]">Wellness</span> Clinic.
+        Sentul <span className="text-[var(--color-gold-800)]">City</span>.
       </h2>
 
       <YellowStrip className="mt-8 md:mt-10 w-full max-w-[760px]" />
@@ -1725,186 +1772,26 @@ function WellnessClinic() {
       {/* Body — origin story */}
       <div className="mt-10 md:mt-14 max-w-[58ch] text-base md:text-lg lg:text-xl leading-[1.7] text-[var(--color-ink-900)]/85 space-y-5">
         <p>
-          Four years ago, we gave in faith for something we couldn&rsquo;t yet
-          see. We believed that the church could be more than a Sunday
-          gathering. That it could be a place of real healing for real people.
+          Ps Simon &amp; Lauren Van Niekerk and their four kids are moving
+          from Australia to Indonesia to lead our new Sentul City campus!
         </p>
         <p>
-          So we started Futures Wellness Clinic, built to meet the emotional,
-          relational, physical and mental needs of our community, with a
-          special heart for those who are most vulnerable and least able to
-          access the help they need.
+          Futures Church is spreading far and wide in Indonesia, and together
+          we get to be a part of what God is building there.
         </p>
       </div>
-
-      {/* Italic kicker — pivots into the impact infographic */}
-      <p className="mt-10 md:mt-14 max-w-[58ch]">
-        <em
-          className="italic font-normal leading-[1.4]"
-          style={{
-            fontFamily: 'var(--font-serif)',
-            fontSize: 'clamp(1.25rem, 2.8vw, 1.875rem)',
-          }}
-        >
-          Here&rsquo;s what God has done with that yes.
-        </em>
-      </p>
 
       {/* Wellness Centre impact infographic — real screen. */}
       <figure className="mt-8 md:mt-12 m-0">
         <img
-          src="/media/infographics/wellness.jpg"
-          alt="Futures Wellness Clinic — impact over the last 2 years: 14,270 total appointments, 18 team members, 272 individual clients, 1,050+ subsidised appointments."
+          src="/media/campuses/sentul-city-feature.jpg"
+          alt="Sentul City, Indonesia. Ps Simon & Lauren Van Niekerk with their family, beside a sunrise view of Sentul City."
           loading="lazy"
           decoding="async"
           className="block w-full h-auto"
         />
       </figure>
     </Section>
-  );
-}
-
-/* ----------------------------------------------------------------------------
-   Section 7 — Stories of Faith
-   Video moment near the bottom of the page. Up to two videos in the same
-   shape as the "What God's Been Doing" pair. Currently shows posters only —
-   wire real Vimeo IDs when stories are recorded.
----------------------------------------------------------------------------- */
-type Story = {
-  slug: string;
-  posterTitle: string;
-  caption: string;
-  /** Optional Vimeo video id. If omitted, a TBC poster is shown instead. */
-  vimeoId?: string;
-  /** Optional unlisted-video privacy token. Only needed if the video on Vimeo
-   *  is set to "Unlisted" rather than fully public. */
-  vimeoHash?: string;
-  /** Optional custom poster image (the still shown before the video plays). */
-  poster?: { src: string; alt: string };
-};
-
-const STORIES: Story[] = [
-  {
-    slug: 'noah-and-lara',
-    posterTitle: 'Noah & Lara',
-    caption: 'Noah & Lara',
-    vimeoId: '1195508930',
-    poster: {
-      src: '/media/stories/noah-and-lara-poster.jpg',
-      alt: 'Noah and Lara sharing their story together.',
-    },
-    // TODO: drop the unlisted `h=` token here if the video isn't fully public.
-  },
-  {
-    slug: 'james-and-georgie',
-    posterTitle: 'James & Georgie',
-    caption: 'James & Georgie',
-    vimeoId: '1195873289',
-    vimeoHash: '92bc4f3f0d',
-    poster: {
-      src: '/media/stories/james-and-georgie-poster.jpg',
-      alt: 'James and Georgie sharing their story together.',
-    },
-  },
-];
-
-function StoriesOfFaith() {
-  return (
-    <Section id="stories" tone="ink">
-      <p className="font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-cream-50)]/65 mb-6 md:mb-8">
-        Voices of the Church
-      </p>
-
-      <h2
-        className="font-[family-name:var(--font-display)] uppercase leading-[0.88] tracking-[-0.01em]"
-        style={{ fontSize: 'clamp(2.75rem, 9vw, 9rem)' }}
-      >
-        Stories of <span className="text-[var(--color-gold-500)]">Faith</span>.
-      </h2>
-
-      <YellowStrip className="mt-8 md:mt-10 w-full max-w-[760px]" />
-
-      <p className="mt-8 md:mt-10 max-w-2xl text-lg md:text-xl leading-[1.45] text-[var(--color-cream-50)]/80">
-        Real people. Real stories. Hear from the family of Futures Church on
-        what God has done, what He's doing now, and the future He's calling us
-        to build together.
-      </p>
-
-      <div className="mt-10 md:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10">
-        {STORIES.map((s) => (
-          <div key={s.slug}>
-            {s.vimeoId ? (
-              <VimeoEmbed
-                id={s.vimeoId}
-                hash={s.vimeoHash}
-                title={`Stories of Faith — ${s.caption}`}
-                posterTitle={s.posterTitle}
-                poster={s.poster}
-              />
-            ) : (
-              <StoryPosterTbc title={s.posterTitle} />
-            )}
-            <p className="mt-3 font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-cream-50)]/55">
-              {s.caption}
-            </p>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-/**
- * Story video poster — visually identical to the click-to-play VimeoEmbed
- * fallback, but non-interactive because there's no real Vimeo ID yet.
- * Swap to <VimeoEmbed id={...} hash={...} ... /> when each story is recorded.
- */
-function StoryPosterTbc({ title }: { title: string }) {
-  return (
-    <div className="relative w-full aspect-video bg-[var(--color-ink-900)] overflow-hidden">
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'linear-gradient(135deg, var(--color-rust-900) 0%, var(--color-ink-900) 60%, var(--color-ink-900) 100%)',
-        }}
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-50 mix-blend-soft-light"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(108deg, transparent 0 90px, rgba(250,246,239,0.05) 90px 92px)',
-        }}
-      />
-      <div className="absolute inset-0 bg-black/15" />
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 md:gap-7 px-6 text-center">
-        <p
-          className="font-[family-name:var(--font-display)] uppercase text-white m-0"
-          style={{
-            fontSize: 'clamp(1.25rem, 3.2vw, 2.5rem)',
-            letterSpacing: '0.12em',
-            lineHeight: 1.05,
-          }}
-        >
-          {title}
-        </p>
-        <div
-          aria-hidden
-          className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[var(--color-gold-500)]/60 flex items-center justify-center"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            className="w-7 h-7 md:w-9 md:h-9 fill-[var(--color-ink-900)] translate-x-[2px]"
-          >
-            <polygon points="6,4 20,12 6,20" />
-          </svg>
-        </div>
-        <p className="font-[family-name:var(--font-display)] uppercase tracking-[0.32em] text-[10px] md:text-xs text-white/55 m-0">
-          Video — TBC
-        </p>
-      </div>
-    </div>
   );
 }
 

@@ -682,15 +682,18 @@ function WaysToGive() {
         <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 md:gap-4">
           {[
             {
-              label: 'Alpharetta Giving Link',
+              label: 'ALPHARETTA',
+              ariaLabel: 'Give to Building the Future at Futures Alpharetta',
               href: 'https://futuresalpharetta.churchcenter.com/giving/to/building-the-future-2026-27',
             },
             {
-              label: 'Gwinnett Giving Link',
+              label: 'GWINNETT',
+              ariaLabel: 'Give to Building the Future at Futures Gwinnett',
               href: 'https://futuresgwinnett.churchcenter.com/giving/to/building-the-future-2026-27',
             },
             {
-              label: 'Kennesaw Giving Link',
+              label: 'KENNESAW',
+              ariaLabel: 'Give to Building the Future at Futures Kennesaw',
               href: 'https://futureskennesaw.churchcenter.com/giving/to/building-the-future-2026-27',
             },
           ].map((campus) => (
@@ -699,6 +702,7 @@ function WaysToGive() {
               href={campus.href}
               target="_blank"
               rel="noopener"
+              aria-label={campus.ariaLabel}
               className="inline-flex items-center justify-center w-full sm:w-auto bg-[var(--color-gold-500)] text-[var(--color-ink-900)] font-[family-name:var(--font-display)] uppercase tracking-[0.1em] text-lg md:text-2xl px-5 py-3 leading-none hover:bg-[var(--color-ink-900)] hover:text-[var(--color-cream-50)] transition-colors"
             >
               {campus.label}

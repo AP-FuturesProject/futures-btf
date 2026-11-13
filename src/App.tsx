@@ -674,6 +674,39 @@ function WaysToGive() {
         />
       </figure>
 
+      {/* Campus Church Center giving links */}
+      <div className="mt-12 md:mt-16">
+        <p className="font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-ink-900)]/65 mb-6 md:mb-8">
+          Give Online Via Church Center
+        </p>
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 md:gap-4">
+          {[
+            {
+              label: 'Alpharetta Giving Link',
+              href: 'https://futuresalpharetta.churchcenter.com/giving/to/building-the-future-2026-27',
+            },
+            {
+              label: 'Gwinnett Giving Link',
+              href: 'https://futuresgwinnett.churchcenter.com/giving/to/building-the-future-2026-27',
+            },
+            {
+              label: 'Kennesaw Giving Link',
+              href: 'https://futureskennesaw.churchcenter.com/giving/to/building-the-future-2026-27',
+            },
+          ].map((campus) => (
+            <a
+              key={campus.href}
+              href={campus.href}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center justify-center w-full sm:w-auto bg-[var(--color-gold-500)] text-[var(--color-ink-900)] font-[family-name:var(--font-display)] uppercase tracking-[0.1em] text-lg md:text-2xl px-5 py-3 leading-none hover:bg-[var(--color-ink-900)] hover:text-[var(--color-cream-50)] transition-colors"
+            >
+              {campus.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
       {/* QUESTIONS */}
       <div className="mt-16 md:mt-24">
         <YellowTag>Questions?</YellowTag>

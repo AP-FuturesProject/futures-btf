@@ -669,63 +669,12 @@ function WaysToGive() {
       <figure className="mt-12 md:mt-16 m-0">
         <img
           src="/media/posters/how-to-give.jpg"
-          alt="How to give — choose either a one-off offering on Sunday June 21 or 28, a 3-month pledge finishing Monday September 28, or a combination. Ways to give: cash, cheque, credit card, online deposit. Tax deductibility is available for donation amounts of $5,000 and above. For any questions call our finance team on 08 8336 0000."
+          alt="How to give. Choose either: 1, one-off offering on Sunday, December 6 or 13; 2, 3 month pledge finishing on Monday, March 8; 3, a combination of an offering plus pledge. Ways to give: Church Center App, cash, check, credit card, crypto or stock. For any questions, email our finance team at atlanta.finance@futures.church."
           loading="lazy"
           decoding="async"
           className="w-full h-auto block"
         />
       </figure>
-
-      {/* Bank account details — stacked single-column so each piece of info
-          gets its own poster moment. Huge numbers in gold; account number is
-          the largest because it's the most critical to copy correctly. */}
-      <div className="mt-14 md:mt-20 bg-[var(--color-cream-100)] border-t-[6px] border-[var(--color-gold-500)] p-8 md:p-12 lg:p-16">
-        <p className="font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-ink-900)]/55">
-          For Direct Deposit
-        </p>
-        <p
-          className="mt-3 font-[family-name:var(--font-display)] uppercase tracking-[0.06em] text-[var(--color-ink-900)] leading-[1]"
-          style={{ fontSize: 'clamp(1.75rem, 4vw, 3.25rem)' }}
-        >
-          FCSA BTF Project
-        </p>
-
-        <div className="mt-10 md:mt-14 space-y-9 md:space-y-12">
-          <div>
-            <p className="font-[family-name:var(--font-display)] uppercase tracking-[0.32em] text-xs md:text-sm text-[var(--color-ink-900)]/55 mb-3">
-              BSB
-            </p>
-            <p
-              className="font-[family-name:var(--font-display)] uppercase leading-[0.95] tracking-[-0.012em] text-[var(--color-gold-800)] m-0"
-              style={{ fontSize: 'clamp(2.5rem, 9vw, 7rem)' }}
-            >
-              085-005
-            </p>
-          </div>
-          <div>
-            <p className="font-[family-name:var(--font-display)] uppercase tracking-[0.32em] text-xs md:text-sm text-[var(--color-ink-900)]/55 mb-3">
-              Account Number
-            </p>
-            <p
-              className="font-[family-name:var(--font-display)] uppercase leading-[0.95] tracking-[-0.012em] text-[var(--color-gold-800)] m-0"
-              style={{ fontSize: 'clamp(2.25rem, 8vw, 6.5rem)' }}
-            >
-              31-405-9072
-            </p>
-          </div>
-          <div>
-            <p className="font-[family-name:var(--font-display)] uppercase tracking-[0.32em] text-xs md:text-sm text-[var(--color-ink-900)]/55 mb-3">
-              Reference
-            </p>
-            <p
-              className="font-[family-name:var(--font-display)] uppercase leading-[1.05] tracking-[0.02em] text-[var(--color-ink-900)] m-0"
-              style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}
-            >
-              Your Pledge Number
-            </p>
-          </div>
-        </div>
-      </div>
 
       {/* QUESTIONS — huge phone number as the closing CTA */}
       <div className="mt-16 md:mt-24">

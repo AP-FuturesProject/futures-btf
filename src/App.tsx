@@ -1380,11 +1380,11 @@ type Campus = {
 
 const CAMPUSES: Campus[] = [
   {
-    slug: 'kilburn',
-    name: 'Futures Kilburn · Melbourne, Australia',
+    slug: 'sentul-city',
+    name: 'Futures Sentul City · Indonesia',
     image: {
-      src: '/media/campuses/kilburn.jpg',
-      alt: 'Futures Kilburn — Melbourne, Australia.',
+      src: '/media/campuses/sentul-city.jpg',
+      alt: 'Futures Sentul City — Indonesia.',
     },
   },
   {

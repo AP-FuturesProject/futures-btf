@@ -1159,9 +1159,6 @@ function Footer() {
                 404-490-2032
               </a>
             </p>
-            <p className="mt-2 leading-[1.55] text-[var(--color-cream-50)]/55">
-              57 Darley Road, Paradise SA 5075
-            </p>
           </div>
         </div>
 

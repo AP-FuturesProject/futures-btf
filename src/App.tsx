@@ -1388,11 +1388,11 @@ const CAMPUSES: Campus[] = [
     },
   },
   {
-    slug: 'new-indonesia',
-    name: 'Futures New Indonesia',
+    slug: 'geelong',
+    name: 'Futures Geelong · Victoria, Australia',
     image: {
-      src: '/media/campuses/new-indonesia.jpg',
-      alt: 'Futures New Indonesia.',
+      src: '/media/campuses/geelong.jpg',
+      alt: 'Futures Geelong — Victoria, Australia.',
     },
   },
   {

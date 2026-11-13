@@ -1724,8 +1724,8 @@ function WellnessClinic() {
       {/* Wellness Centre impact infographic — real screen. */}
       <figure className="mt-8 md:mt-12 m-0">
         <img
-          src="/media/infographics/wellness.jpg"
-          alt="Futures Wellness Clinic — impact over the last 2 years: 14,270 total appointments, 18 team members, 272 individual clients, 1,050+ subsidised appointments."
+          src="/media/campuses/sentul-city-feature.jpg"
+          alt="Sentul City, Indonesia. Ps Simon & Lauren Van Niekerk with their family, beside a sunrise view of Sentul City."
           loading="lazy"
           decoding="async"
           className="block w-full h-auto"

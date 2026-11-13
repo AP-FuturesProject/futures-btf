@@ -43,9 +43,9 @@ function App() {
         <WhatGodsBeenDoing />
         <FifteenYears />
         <ChurchHealth />
-        <WellnessClinic />
         <NewCampuses />
         <MountBarker />
+        <WellnessClinic />
         <ActionLadder />
         <WaysToGive />
         <FAQs />
@@ -1130,9 +1130,9 @@ function Footer() {
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#updates">What God&rsquo;s Doing</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#multiplication">15 Years</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#church-health">Church Health</a></li>
-              <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#wellness">Wellness Clinic</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#campuses">New Campuses</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#mount-barker">Sugarloaf Building</a></li>
+              <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#wellness">Sentul City</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#ways-to-give">Ways to Give</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#faqs">FAQs</a></li>
             </ul>
@@ -1681,15 +1681,14 @@ function WellnessClinic() {
   return (
     <Section id="wellness" tone="cream">
       <p className="font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-ink-900)]/65 mb-6 md:mb-8">
-        Built In Faith · Four Years On
+        Built In Faith · Sentul City, Indonesia
       </p>
 
       <h2
         className="font-[family-name:var(--font-display)] uppercase leading-[0.88] tracking-[-0.01em]"
         style={{ fontSize: 'clamp(2.75rem, 9vw, 9rem)' }}
       >
-        Futures{' '}
-        <span className="text-[var(--color-gold-800)]">Wellness</span> Clinic.
+        Sentul <span className="text-[var(--color-gold-800)]">City</span>.
       </h2>
 
       <YellowStrip className="mt-8 md:mt-10 w-full max-w-[760px]" />

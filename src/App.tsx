@@ -1132,7 +1132,7 @@ function Footer() {
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#church-health">Church Health</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#wellness">Wellness Clinic</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#campuses">New Campuses</a></li>
-              <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#mount-barker">Mount Barker</a></li>
+              <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#mount-barker">Sugarloaf Building</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#ways-to-give">Ways to Give</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#faqs">FAQs</a></li>
             </ul>
@@ -1145,18 +1145,18 @@ function Footer() {
             </p>
             <p className="leading-[1.55]">
               <a
-                href="mailto:finance@futures.church"
+                href="mailto:atlanta.finance@futures.church"
                 className="hover:text-[var(--color-gold-500)] transition-colors"
               >
-                finance@futures.church
+                atlanta.finance@futures.church
               </a>
             </p>
             <p className="mt-2 leading-[1.55] text-[var(--color-cream-50)]/75">
               <a
-                href="tel:+61883600000"
+                href="tel:+14044902032"
                 className="hover:text-[var(--color-gold-500)] transition-colors"
               >
-                8336 0000
+                404-490-2032
               </a>
             </p>
             <p className="mt-2 leading-[1.55] text-[var(--color-cream-50)]/55">

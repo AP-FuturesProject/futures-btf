@@ -1705,19 +1705,6 @@ function WellnessClinic() {
         </p>
       </div>
 
-      {/* Italic kicker — pivots into the impact infographic */}
-      <p className="mt-10 md:mt-14 max-w-[58ch]">
-        <em
-          className="italic font-normal leading-[1.4]"
-          style={{
-            fontFamily: 'var(--font-serif)',
-            fontSize: 'clamp(1.25rem, 2.8vw, 1.875rem)',
-          }}
-        >
-          Here&rsquo;s what God has done with that yes.
-        </em>
-      </p>
-
       {/* Wellness Centre impact infographic — real screen. */}
       <figure className="mt-8 md:mt-12 m-0">
         <img

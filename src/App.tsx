@@ -676,30 +676,18 @@ function WaysToGive() {
         />
       </figure>
 
-      {/* QUESTIONS — huge phone number as the closing CTA */}
+      {/* QUESTIONS */}
       <div className="mt-16 md:mt-24">
         <YellowTag>Questions?</YellowTag>
         <p className="mt-6 md:mt-8 text-lg md:text-xl text-[var(--color-ink-900)]/80">
-          Call our finance team at
+          Email our finance team at
         </p>
-        <p
-          className="mt-3 md:mt-4 font-[family-name:var(--font-display)] uppercase tracking-[-0.01em] leading-[1]"
-          style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)' }}
-        >
+        <p className="mt-3 md:mt-4 text-lg md:text-xl text-[var(--color-ink-900)]/80">
           <a
-            href="tel:+61883600000"
-            className="text-[var(--color-ink-900)] hover:text-[var(--color-gold-800)] transition-colors"
+            href="mailto:atlanta.finance@futures.church"
+            className="border-b-2 border-[var(--color-gold-500)] pb-0.5 hover:border-[var(--color-ink-900)] transition-colors"
           >
-            (08) 8336 0000
-          </a>
-        </p>
-        <p className="mt-5 md:mt-6 text-base md:text-lg text-[var(--color-ink-900)]/75">
-          Or email{' '}
-          <a
-            href="mailto:finance@futures.church"
-            className="font-[family-name:var(--font-display)] uppercase tracking-[0.1em] border-b-2 border-[var(--color-gold-500)] pb-0.5 hover:border-[var(--color-ink-900)] transition-colors"
-          >
-            finance@futures.church
+            atlanta.finance@futures.church
           </a>
         </p>
       </div>

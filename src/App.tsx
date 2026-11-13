@@ -1019,17 +1019,12 @@ const FAQS: FAQ[] = [
   {
     q: 'When does the giving start?',
     a:
-      'The Building the Future offering will take place on Sunday, June 21 and Sunday, June 28. That’s when you can bring a one-off offering, begin a 3-month pledge, or do a combination of both. Pledges finish on Monday, September 28.',
+      'The Building the Future offering will take place on Sunday, December 6 and Sunday, December 13. That’s when you can bring a one-off offering, begin a 3-month pledge, or do a combination of both. Pledges finish on Monday, March 8 2027.',
   },
   {
     q: 'Is my pledge tax-deductible?',
     a:
-      'Tax deductibility is available for donation amounts of $5,000 and above. If you would like a tax deduction, please contact our finance team for account details. Call (08) 8336 0000 or email finance@futures.church.',
-  },
-  {
-    q: 'Can I give from outside Australia?',
-    a:
-      'We welcome international partners who would like to support our vision. You can give securely or via international bank transfer. For overseas transfers, please contact our finance team at finance@futures.church for banking details.',
+      'Yes it is. Futures Church is a qualified section 501(c) (3) organization. All tithes, offerings, or donations of any kind are tax deductible under section 170(c)(2). You agree to relinquish control in accordance with IRS regulations.',
   },
   {
     q: 'What if my circumstances change?',

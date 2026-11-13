@@ -1289,6 +1289,9 @@ function BuildingTheFuture2026() {
    video. Dark moment to break the cream rhythm + put the videos in their best
    visual environment.
 ---------------------------------------------------------------------------- */
+/** Drop a Vimeo id (and unlisted hash, if the video needs one) here to embed it. */
+const GLOBAL_VIMEO = { id: '', hash: '' };
+
 function WhatGodsBeenDoing() {
   return (
     <Section id="updates" tone="ink">
@@ -1324,18 +1327,54 @@ function WhatGodsBeenDoing() {
           </p>
         </div>
 
-        {/* Global — Ps Ashley & Jane Evans vision */}
+        {/* Global — Ps Ashley & Jane Evans vision. Empty id keeps the placeholder. */}
         <div>
-          <VimeoEmbed
-            id="1188946482"
-            hash="076da569fd"
-            title="Global — Ps Ashley & Jane Evans"
-            posterTitle="Global"
-            poster={{
-              src: '/media/portraits/ashley-jane-poster.jpg',
-              alt: 'Pastors Ashley and Jane Evans — Global vision.',
-            }}
-          />
+          {GLOBAL_VIMEO.id ? (
+            <VimeoEmbed
+              id={GLOBAL_VIMEO.id}
+              hash={GLOBAL_VIMEO.hash || undefined}
+              title="Global — Ps Ashley & Jane Evans"
+              posterTitle="Global"
+              poster={{
+                src: '/media/portraits/ashley-jane-poster.jpg',
+                alt: 'Pastors Ashley and Jane Evans — Global vision.',
+              }}
+            />
+          ) : (
+            <div
+              className="relative w-full aspect-video bg-[var(--color-ink-900)] overflow-hidden"
+              role="img"
+              aria-label="Global video coming soon"
+            >
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    'linear-gradient(135deg, var(--color-rust-900) 0%, var(--color-ink-900) 60%, var(--color-ink-900) 100%)',
+                }}
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 opacity-50 mix-blend-soft-light"
+                style={{
+                  backgroundImage:
+                    'repeating-linear-gradient(108deg, transparent 0 90px, rgba(250,246,239,0.05) 90px 92px)',
+                }}
+              />
+              <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
+                <p
+                  className="font-[family-name:var(--font-display)] uppercase text-white m-0"
+                  style={{
+                    fontSize: 'clamp(1.25rem, 3.2vw, 2.5rem)',
+                    letterSpacing: '0.12em',
+                    lineHeight: 1.05,
+                  }}
+                >
+                  Global video coming soon
+                </p>
+              </div>
+            </div>
+          )}
           <p className="mt-3 font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-cream-50)]/55">
             Global · Ps Ashley &amp; Jane Evans
           </p>

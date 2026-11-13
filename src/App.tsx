@@ -1696,15 +1696,10 @@ function WellnessClinic() {
       {/* Body — origin story */}
       <div className="mt-10 md:mt-14 max-w-[58ch] text-base md:text-lg lg:text-xl leading-[1.7] text-[var(--color-ink-900)]/85 space-y-5">
         <p>
-          Four years ago, we gave in faith for something we couldn&rsquo;t yet
-          see. We believed that the church could be more than a Sunday
-          gathering. That it could be a place of real healing for real people.
-        </p>
-        <p>
-          So we started Futures Wellness Clinic, built to meet the emotional,
-          relational, physical and mental needs of our community, with a
-          special heart for those who are most vulnerable and least able to
-          access the help they need.
+          Ps Simon &amp; Lauren Van Niekerk and their four kids are moving to
+          Indonesia to lead our new Sentul City campus! Futures Church is
+          spreading far and wide in Indonesia, and together we get to be a
+          part of what God is building there.
         </p>
       </div>
 

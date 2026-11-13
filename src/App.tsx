@@ -1670,13 +1670,14 @@ export function MountBarker() {
           faith-led, no em-dashes). */}
       <div className="mt-10 md:mt-14 max-w-[58ch] text-base md:text-lg lg:text-xl leading-[1.7] text-[var(--color-ink-900)]/85 space-y-5">
         <p>
-          For years we&rsquo;ve been praying for a building for Mount Barker. A
-          home where the church family can gather, grow and send from.
+          For years we&rsquo;ve prayed for a new home for Gwinnett. A
+          place where our church family can gather, grow, and be sent out
+          to reach our city.
         </p>
         <p>
-          We&rsquo;re so excited to announce that God has answered. Another
-          yes to His vision. Another seed in the ground for the next chapter
-          of Futures Church.
+          Today, the land is cleared and ready to build. God is answering,
+          and this is another seed in the ground for the next chapter of
+          Futures Church.
         </p>
       </div>
 

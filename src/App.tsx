@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 
 /**
  * Building The Future — homepage
@@ -1013,7 +1013,10 @@ function Quote({ voice }: { voice: Voice }) {
    PLACEHOLDERS — replace each entry's `a` with the real answer when the team
    has firmed it up.
 ---------------------------------------------------------------------------- */
-type FAQ = { q: string; a: string };
+type FAQ = { q: string; a: ReactNode };
+
+const linkClass =
+  'border-b-2 border-[var(--color-gold-500)] pb-0.5 hover:border-[var(--color-ink-900)] transition-colors';
 
 const FAQS: FAQ[] = [
   {
@@ -1033,8 +1036,21 @@ const FAQS: FAQ[] = [
   },
   {
     q: 'Who can I talk to?',
-    a:
-      'For anything about banking, pledges or tax, our finance team is the right call. Phone (08) 8336 0000 or email finance@futures.church. For questions about the vision itself (what we’re giving to, why now, what it means for your campus) have a chat with your Campus Pastor.',
+    a: (
+      <>
+        For anything about banking, pledges or tax, our finance team is the
+        right call. They can be reached by calling{' '}
+        <a href="tel:+14044902032" className={linkClass}>
+          404-490-2032
+        </a>{' '}
+        or by emailing{' '}
+        <a href="mailto:Atlanta.Finance@futures.church" className={linkClass}>
+          Atlanta.Finance@futures.church
+        </a>
+        . For questions about the vision itself (what we’re giving to, why now,
+        what it means for your campus) have a chat with your Campus Pastor.
+      </>
+    ),
   },
 ];
 

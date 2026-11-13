@@ -21,9 +21,8 @@ import { useEffect, useState } from 'react';
  *                      Concepción, Mérida, Sur Del Lago, Valles Del Tuy)
  *   8.  Action Ladder  (Pray · Prepare · Give/Pledge · Commit)
  *   9.  Ways to Give  (slide-aligned: Choose Either / Ways / Bank / Questions)
- *   10. Stories of Faith  (video placeholder)
- *   11. FAQs
- *   12. Footer
+ *   10. FAQs
+ *   11. Footer
  *
  * Components retained from the previous structure but no longer rendered
  * (kept for easy revival, prefixed `export` to satisfy noUnusedLocals):
@@ -49,7 +48,6 @@ function App() {
         <MountBarker />
         <ActionLadder />
         <WaysToGive />
-        <StoriesOfFaith />
         <FAQs />
       </main>
       <Footer />
@@ -1125,7 +1123,6 @@ function Footer() {
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#campuses">New Campuses</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#mount-barker">Mount Barker</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#ways-to-give">Ways to Give</a></li>
-              <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#stories">Stories of Faith</a></li>
               <li><a className="hover:text-[var(--color-gold-500)] transition-colors" href="#faqs">FAQs</a></li>
             </ul>
           </div>
@@ -1728,150 +1725,6 @@ function WellnessClinic() {
         />
       </figure>
     </Section>
-  );
-}
-
-/* ----------------------------------------------------------------------------
-   Section 7 — Stories of Faith
-   Video moment near the bottom of the page. Up to two videos in the same
-   shape as the "What God's Been Doing" pair. Currently shows posters only —
-   wire real Vimeo IDs when stories are recorded.
----------------------------------------------------------------------------- */
-type Story = {
-  slug: string;
-  posterTitle: string;
-  caption: string;
-  /** Optional Vimeo video id. If omitted, a TBC poster is shown instead. */
-  vimeoId?: string;
-  /** Optional unlisted-video privacy token. Only needed if the video on Vimeo
-   *  is set to "Unlisted" rather than fully public. */
-  vimeoHash?: string;
-  /** Optional custom poster image (the still shown before the video plays). */
-  poster?: { src: string; alt: string };
-};
-
-const STORIES: Story[] = [
-  {
-    slug: 'noah-and-lara',
-    posterTitle: 'Noah & Lara',
-    caption: 'Noah & Lara',
-    vimeoId: '1195508930',
-    poster: {
-      src: '/media/stories/noah-and-lara-poster.jpg',
-      alt: 'Noah and Lara sharing their story together.',
-    },
-    // TODO: drop the unlisted `h=` token here if the video isn't fully public.
-  },
-  {
-    slug: 'james-and-georgie',
-    posterTitle: 'James & Georgie',
-    caption: 'James & Georgie',
-    vimeoId: '1195873289',
-    vimeoHash: '92bc4f3f0d',
-    poster: {
-      src: '/media/stories/james-and-georgie-poster.jpg',
-      alt: 'James and Georgie sharing their story together.',
-    },
-  },
-];
-
-function StoriesOfFaith() {
-  return (
-    <Section id="stories" tone="ink">
-      <p className="font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-cream-50)]/65 mb-6 md:mb-8">
-        Voices of the Church
-      </p>
-
-      <h2
-        className="font-[family-name:var(--font-display)] uppercase leading-[0.88] tracking-[-0.01em]"
-        style={{ fontSize: 'clamp(2.75rem, 9vw, 9rem)' }}
-      >
-        Stories of <span className="text-[var(--color-gold-500)]">Faith</span>.
-      </h2>
-
-      <YellowStrip className="mt-8 md:mt-10 w-full max-w-[760px]" />
-
-      <p className="mt-8 md:mt-10 max-w-2xl text-lg md:text-xl leading-[1.45] text-[var(--color-cream-50)]/80">
-        Real people. Real stories. Hear from the family of Futures Church on
-        what God has done, what He's doing now, and the future He's calling us
-        to build together.
-      </p>
-
-      <div className="mt-10 md:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10">
-        {STORIES.map((s) => (
-          <div key={s.slug}>
-            {s.vimeoId ? (
-              <VimeoEmbed
-                id={s.vimeoId}
-                hash={s.vimeoHash}
-                title={`Stories of Faith — ${s.caption}`}
-                posterTitle={s.posterTitle}
-                poster={s.poster}
-              />
-            ) : (
-              <StoryPosterTbc title={s.posterTitle} />
-            )}
-            <p className="mt-3 font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-cream-50)]/55">
-              {s.caption}
-            </p>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-/**
- * Story video poster — visually identical to the click-to-play VimeoEmbed
- * fallback, but non-interactive because there's no real Vimeo ID yet.
- * Swap to <VimeoEmbed id={...} hash={...} ... /> when each story is recorded.
- */
-function StoryPosterTbc({ title }: { title: string }) {
-  return (
-    <div className="relative w-full aspect-video bg-[var(--color-ink-900)] overflow-hidden">
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'linear-gradient(135deg, var(--color-rust-900) 0%, var(--color-ink-900) 60%, var(--color-ink-900) 100%)',
-        }}
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-50 mix-blend-soft-light"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(108deg, transparent 0 90px, rgba(250,246,239,0.05) 90px 92px)',
-        }}
-      />
-      <div className="absolute inset-0 bg-black/15" />
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 md:gap-7 px-6 text-center">
-        <p
-          className="font-[family-name:var(--font-display)] uppercase text-white m-0"
-          style={{
-            fontSize: 'clamp(1.25rem, 3.2vw, 2.5rem)',
-            letterSpacing: '0.12em',
-            lineHeight: 1.05,
-          }}
-        >
-          {title}
-        </p>
-        <div
-          aria-hidden
-          className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[var(--color-gold-500)]/60 flex items-center justify-center"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            className="w-7 h-7 md:w-9 md:h-9 fill-[var(--color-ink-900)] translate-x-[2px]"
-          >
-            <polygon points="6,4 20,12 6,20" />
-          </svg>
-        </div>
-        <p className="font-[family-name:var(--font-display)] uppercase tracking-[0.32em] text-[10px] md:text-xs text-white/55 m-0">
-          Video — TBC
-        </p>
-      </div>
-    </div>
   );
 }
 

@@ -1646,18 +1646,21 @@ function ChurchHealth() {
    Standalone announcement section sitting under New Campuses. Calls out the
    new Mount Barker building with the campaign screen graphic.
 ---------------------------------------------------------------------------- */
+/** Drop a Vimeo id (and unlisted hash, if the video needs one) here to embed it. */
+const SUGARLOAF_VIMEO = { id: '', hash: '' };
+
 export function MountBarker() {
   return (
     <Section id="mount-barker" tone="cream-100">
       <p className="font-[family-name:var(--font-display)] text-[10px] md:text-xs tracking-[0.32em] uppercase text-[var(--color-ink-900)]/65 mb-6 md:mb-8">
-        Built In Faith · Mount Barker
+        Built In Faith · Sugarloaf Building
       </p>
 
       <h2
         className="font-[family-name:var(--font-display)] uppercase leading-[0.88] tracking-[-0.01em]"
         style={{ fontSize: 'clamp(2.75rem, 9vw, 9rem)' }}
       >
-        Mount <span className="text-[var(--color-gold-800)]">Barker</span>.
+        Sugarloaf <span className="text-[var(--color-gold-800)]">Building</span>.
       </h2>
 
       <YellowStrip className="mt-8 md:mt-10 w-full max-w-[760px]" />
@@ -1677,16 +1680,51 @@ export function MountBarker() {
         </p>
       </div>
 
-      {/* Mount Barker announcement screen. */}
-      <figure className="mt-10 md:mt-14 m-0">
-        <img
-          src="/media/campuses/mount-barker.jpg"
-          alt="Futures Mount Barker — South Australia. A new home for the church family."
-          loading="lazy"
-          decoding="async"
-          className="block w-full h-auto"
-        />
-      </figure>
+      {/* Sugarloaf video. Empty id keeps the poster; a real id uses VimeoEmbed. */}
+      <div className="mt-10 md:mt-14">
+        {SUGARLOAF_VIMEO.id ? (
+          <VimeoEmbed
+            id={SUGARLOAF_VIMEO.id}
+            hash={SUGARLOAF_VIMEO.hash || undefined}
+            title="Sugarloaf Building"
+            posterTitle="Sugarloaf"
+          />
+        ) : (
+          <div
+            className="relative w-full aspect-video bg-[var(--color-ink-900)] overflow-hidden"
+            role="img"
+            aria-label="Sugarloaf video coming soon"
+          >
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'linear-gradient(135deg, var(--color-rust-900) 0%, var(--color-ink-900) 60%, var(--color-ink-900) 100%)',
+              }}
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-50 mix-blend-soft-light"
+              style={{
+                backgroundImage:
+                  'repeating-linear-gradient(108deg, transparent 0 90px, rgba(250,246,239,0.05) 90px 92px)',
+              }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
+              <p
+                className="font-[family-name:var(--font-display)] uppercase text-white m-0"
+                style={{
+                  fontSize: 'clamp(1.25rem, 3.2vw, 2.5rem)',
+                  letterSpacing: '0.12em',
+                  lineHeight: 1.05,
+                }}
+              >
+                Sugarloaf video coming soon
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
     </Section>
   );
 }

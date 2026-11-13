@@ -1612,9 +1612,8 @@ export function MountBarker() {
           to reach our city.
         </p>
         <p>
-          Today, the land is cleared and ready to build. God is answering,
-          and this is another seed in the ground for the next chapter of
-          Futures Church.
+          Today, the land is cleared and ready to build. This is another
+          seed in the ground for the next chapter of Futures Church.
         </p>
       </div>
 

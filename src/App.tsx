@@ -1032,7 +1032,7 @@ const FAQS: FAQ[] = [
   {
     q: 'What if my circumstances change?',
     a:
-      'A pledge is an act of faith, not a contract. If anything shifts between now and the end of September, have a conversation with our finance team. They’ll walk through your options with you.',
+      'A pledge is an act of faith, not a contract. If anything shifts between now and the beginning of March, have a conversation with our finance team. They’ll walk through your options with you.',
   },
   {
     q: 'Who can I talk to?',

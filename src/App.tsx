@@ -1290,7 +1290,7 @@ function BuildingTheFuture2026() {
    visual environment.
 ---------------------------------------------------------------------------- */
 /** Drop a Vimeo id (and unlisted hash, if the video needs one) here to embed it. */
-const GLOBAL_VIMEO = { id: '', hash: '' };
+const GLOBAL_VIMEO = { id: '1246912611', hash: 'bb42946dbc' };
 
 function WhatGodsBeenDoing() {
   return (
@@ -1665,7 +1665,7 @@ function ChurchHealth() {
    new Mount Barker building with the campaign screen graphic.
 ---------------------------------------------------------------------------- */
 /** Drop a Vimeo id (and unlisted hash, if the video needs one) here to embed it. */
-const SUGARLOAF_VIMEO = { id: '', hash: '' };
+const SUGARLOAF_VIMEO = { id: '1246911164', hash: '995cb333e0' };
 
 export function MountBarker() {
   return (
